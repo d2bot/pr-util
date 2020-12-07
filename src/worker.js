@@ -10,7 +10,9 @@ const LABELS = [
 
 function getDateTime() {
   const date = new Date();
-  return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()} ${date.getHours()}:${date.getMinutes()}`;
+  return `${date.getFullYear()}/${
+    date.getMonth() + 1
+  }/${date.getDate()} ${date.getHours()}:${date.getMinutes()}`;
 }
 
 function getPullRequestInfo(base, head, compareData) {
@@ -69,6 +71,7 @@ async function run(token, org, repos, assignees, head, base) {
         result.status = 'failed';
         if (err.status) {
           result.http_status = err.status;
+          console.error(`🔴 Failed repo: ${result.repo}`, err.response.text);
           const respBody = err.response.body;
           result.message = respBody.message;
           if (respBody.errors) {

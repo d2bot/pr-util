@@ -40,3 +40,21 @@ USAGE
 ```
 
 <!-- optionsstop -->
+
+<!-- fileformat -->
+
+# Demo File Input
+
+```
+["demo", "demo2"]
+```
+
+<!-- fileformatstop -->
+
+<!-- democli -->
+
+```bash
+$ ./bin/run -i data/repo.json -t xxxxx
+```
+
+<!-- democlistop -->
